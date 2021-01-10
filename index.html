@@ -11,45 +11,89 @@
     <div>
         <p id="result">Lavametrit: </p>
     </div>
-    <div>
-        <label for="eur">Eurolava:</label>
-        <input type="number" name="eur" id="eur" onchange="calculateLvm()">
-    </div>
-    <div>
-        <label for="fin">Finlava:</label>
-        <input type="number" name="fin" id="fin" onchange="calculateLvm()">
-    </div>
-    <div>
-        <label for="rll">Rullakko:</label>
-        <input type="number" name="rullakko" id="rullakko" onchange="calculateLvm()">
-    </div>
-    <div>
-        <label for="teho">Myymälälava:</label>
-        <input type="number" name="teho" id="teho" onchange="calculateLvm()">
-    </div>
-    <div>
-        <label for="dol">Dolly:</label>
-        <input type="number" name="dol" id="dol" onchange="calculateLvm()">
-    </div>
-    <div>
-        <label for="mrlk">Maitorullako:</label>
-        <input type="number" name="fin" id="fin" onchange="calculateLvm()">
-    </div>
-    <div>
-        <label for="mdol">Maitodolly:</label>
-        <input type="number" name="mdol" id="mdol" onchange="calculateLvm()">
-    </div>
-    <div>
-        <label for="pienipullo">240L pulloastia:</label>
-        <input type="number" name="pienipullo" id="pienipullo" onchange="calculateLvm()">
-    </div>
-    <div>
-        <label for="isopullo">600L pulloastia:</label>
-        <input type="number" name="isopullo" id="isopullo" onchange="calculateLvm()">
-    </div>
-    <div>
-        <label for="ccrlk">Kukkarullakko:</label>
-        <input type="number" name="ccrlk" id="ccrlk" onchange="calculateLvm()">
+    <div id="lavat">
+        <table>
+            <tr>
+                <td>
+                    <label for="eur">Eurolava:</label>
+                </td>
+                <td>
+                    <input type="number" name="eur" id="eur" min="0" onchange="calculateLvm()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="fin">Finlava:</label>
+                </td>
+                <td>
+                    <input type="number" name="fin" id="fin" min="0" onchange="calculateLvm()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="rll">Rullakko:</label>
+                </td>
+                <td>
+                    <input type="number" name="rullakko" id="rullakko" min="0" onchange="calculateLvm()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="teho">Myymälälava:</label>
+                </td>
+                <td>
+                    <input type="number" name="teho" id="teho" min="0" onchange="calculateLvm()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dol">Dolly:</label>
+                </td>
+                <td>
+                    <input type="number" name="dol" id="dol" min="0" onchange="calculateLvm()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="mrlk">Maitorullako:</label>
+                </td>
+                <td>
+                    <input type="number" name="fin" id="fin" min="0" onchange="calculateLvm()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="mdol">Maitodolly:</label>
+                </td>
+                <td>
+                    <input type="number" name="mdol" id="mdol" min="0" onchange="calculateLvm()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="pienipullo">240L pulloastia:</label>
+                </td>
+                <td>
+                    <input type="number" name="pienipullo" id="pienipullo" min="0" onchange="calculateLvm()">  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="isopullo">600L pulloastia:</label>
+                </td>
+                <td>
+                    <input type="number" name="isopullo" id="isopullo" min="0" onchange="calculateLvm()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="ccrlk">Kukkarullakko:</label>
+                </td>
+                <td>
+                    <input type="number" name="ccrlk" id="ccrlk" min="0" onchange="calculateLvm()">
+                </td>
+            </tr>
+        </table>
     </div>
     <div>
         <button onclick="reset()">Resetoi</button>
@@ -57,5 +101,6 @@
     <div>
         <button onclick="calculateLvm()">Laske</button>
     </div>
+
 </body>
 </html>
