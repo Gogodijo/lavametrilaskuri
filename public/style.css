@@ -27,6 +27,9 @@ th {
 h1 {
     font-family: 'Open Sans', sans-serif;
 }
+p {
+    text-align: left;
+}
 .button {
     background-color: rgb(63, 63, 63);
     text-align: center;

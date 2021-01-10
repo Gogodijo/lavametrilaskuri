@@ -25,7 +25,7 @@ function calculateLvm(){
     lavametrit += pienipullo * 0.1
     lavametrit += isopullo * 0.4
     lavametrit += ccrlk * 0.35
-    document.getElementById("result").innerHTML = "Lavametrit: " + lavametrit.toFixed(2)
+    document.getElementById("result").innerHTML = "Lavametrit: " + lavametrit.toFixed(2) + " lvm"
     console.log(lavametrit)
 }
 
