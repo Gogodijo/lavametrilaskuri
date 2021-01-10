@@ -9,6 +9,9 @@
 <body>
     <h1>Lavametrilaskuri</h1>
     <div>
+        <p id="result">Lavametrit: </p>
+    </div>
+    <div>
         <label for="eur">Eurolava:</label>
         <input type="number" name="eur" id="eur" onchange="calculateLvm()">
     </div>
@@ -37,8 +40,22 @@
         <input type="number" name="mdol" id="mdol" onchange="calculateLvm()">
     </div>
     <div>
-        <label for="mdol">Maitodolly:</label>
-        <input type="number" name="mdol" id="mdol" onchange="calculateLvm()">
+        <label for="pienipullo">240L pulloastia:</label>
+        <input type="number" name="pienipullo" id="pienipullo" onchange="calculateLvm()">
+    </div>
+    <div>
+        <label for="isopullo">600L pulloastia:</label>
+        <input type="number" name="isopullo" id="isopullo" onchange="calculateLvm()">
+    </div>
+    <div>
+        <label for="ccrlk">Kukkarullakko:</label>
+        <input type="number" name="ccrlk" id="ccrlk" onchange="calculateLvm()">
+    </div>
+    <div>
+        <button onclick="reset()">Resetoi</button>
+    </div>
+    <div>
+        <button onclick="calculateLvm()">Laske</button>
     </div>
 </body>
 </html>
