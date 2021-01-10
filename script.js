@@ -9,17 +9,23 @@ let mdol=0
 let pienipullo=0
 let isopullo=0
 let ccrlk=0
-
-
+let lavametrit = 0
 
 function calculateLvm(){
     getValues()
     console.log("calculatea kutsuttu")
-    console.log(eur)
+    lavametrit = eur * 0.4
+    lavametrit += fin * 0.5
 }
 
 function getValues(){
     console.log("Get values")
+    if(Number.isInteger(parseInt( document.getElementById("eur").value))){
+        eur = parseInt(document.getElementById("eur").value)
+    }
+    if(Number.isInteger(parseInt(document.getElementById("fin").value))){
+        fin = parseInt(document.getElementById("fin").value)
+    }
 }
 
 function reset(){
@@ -30,5 +36,9 @@ function reset(){
     dol=0
     teho=0
     vartti=0
-
+    mrlk=0
+    mdol=0
+    pienipullo=0
+    isopullo=0
+    ccrlk=0
 }
