@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="http://192.168.1.186:3000/style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <script type="text/javascript" src="http://192.168.1.186:3000/script.js"></script>
+    <!-- http://192.168.1.186:3000/-->
 </head>
 <body>
     <div class="flex-container">
@@ -15,7 +16,6 @@
             <h1>Lavametrilaskuri</h1>
             <p id="result">Lavametrit: </p>
         </div>
-
 
         <div id="inputtable" class="flex-container">
             <table>
@@ -61,7 +61,7 @@
                 </tr>
                 <tr>
                     <th>
-                        <label for="mrlk">Maitorullako:</label>
+                        <label for="mrlk">Maitorullakko:</label>
                     </th>
                     <td>
                         <input type="number" name="mrlk" id="mrlk" min="0" onchange="calculateLvm()">
@@ -101,7 +101,7 @@
                 </tr>
             </table>
         </div>
-        <div>
+        <div class="btn">
             <button class="button" onclick="reset()">Resetoi</button>
             <button class="button" onclick="calculateLvm()">Laske</button>
         </div>
