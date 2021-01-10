@@ -1,0 +1,23 @@
+body {
+    height: 100%;
+    margin: 0px;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+.flex-container>div {
+    background-color: aqua;
+}
+#inputtable [
+    p
+]
+h1 {
+
+}
+h2 {
+
+}
