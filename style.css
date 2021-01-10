@@ -1,23 +1,42 @@
 body {
     height: 100%;
     margin: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 .flex-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 600px;
 }
-.flex-container>div {
-    background-color: aqua;
+.flex-container > div {
+    background-color: rgb(163, 177, 177);
 }
-#inputtable [
-    p
-]
+#inputtable {
+    padding: 15px 5px;
+}
+table {
+    width: 100%;
+}
+tr {
+    height: 2em;
+}
+th {
+    text-align: start;
+}
 h1 {
-
+    font-family: 'Open Sans', sans-serif;
 }
-h2 {
-
+.button {
+    background-color: rgb(63, 63, 63);
+    text-align: center;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 8px;
+    border: 2px solid rgb(63, 63, 63);
+    transition-duration: 0.4s;
+}
+.button:hover {
+    background-color: white;
+    color: rgb(63, 63, 63);
 }
