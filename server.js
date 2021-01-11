@@ -8,5 +8,3 @@ app.get("/", (req,res) => {
 })
 
 app.listen(3000,'192.168.1.186')
-
-console.log(process.env.OPENSHIFT_NODEJS_IP)

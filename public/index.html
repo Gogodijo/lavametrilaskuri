@@ -1,111 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Lavametrilaskuri</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="http://192.168.1.186:3000/style.css">
     <script type="text/javascript" src="http://192.168.1.186:3000/script.js"></script>
     <!-- http://192.168.1.186:3000/-->
 </head>
+
 <body>
     <div class="flex-container">
         <div class="flex-container">
             <h1>Lavametrilaskuri</h1>
-            <p id="result">Lavametrit: </p>
+            <p id="result">Lavametrit: 0.00 lvm</p>
         </div>
-
-        <div id="inputtable" class="flex-container">
-            <table>
-                <tr>
-                    <th>
-                        <label for="eur">Eurolava:</label>
-                    </th>
-                    <td>
-                        <input type="number" name="eur" id="eur" min="0" onchange="calculateLvm()">
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label for="fin">Finlava:</label>
-                    </th>
-                    <td>
-                        <input type="number" name="fin" id="fin" min="0" onchange="calculateLvm()">
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label for="rll">Rullakko:</label>
-                    </th>
-                    <td>
-                        <input type="number" name="rll" id="rll" min="0" onchange="calculateLvm()">
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label for="teho">Myymälälava:</label>
-                    </th>
-                    <td>
-                        <input type="number" name="teho" id="teho" min="0" onchange="calculateLvm()">
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label for="dol">Dolly:</label>
-                    </th>
-                    <td>
-                        <input type="number" name="dol" id="dol" min="0" onchange="calculateLvm()">
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label for="mrlk">Maitorullakko:</label>
-                    </th>
-                    <td>
-                        <input type="number" name="mrlk" id="mrlk" min="0" onchange="calculateLvm()">
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label for="mdol">Maitodolly:</label>
-                    </th>
-                    <td>
-                        <input type="number" name="mdol" id="mdol" min="0" onchange="calculateLvm()">
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label for="pienipullo">240L pulloastia:</label>
-                    </th>
-                    <td>
-                        <input type="number" name="pienipullo" id="pienipullo" min="0" onchange="calculateLvm()">  
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label for="isopullo">600L pulloastia:</label>
-                    </th>
-                    <td>
-                        <input type="number" name="isopullo" id="isopullo" min="0" onchange="calculateLvm()">
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label for="ccrlk">Kukkarullakko:</label>
-                    </th>
-                    <td>
-                        <input type="number" name="ccrlk" id="ccrlk" min="0" onchange="calculateLvm()">
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="btn">
-            <button class="button" onclick="reset()">Resetoi</button>
-            <button class="button" onclick="calculateLvm()">Laske</button>
+        <div id="laskuri">
+            <div id="inputtable" class="flex-container">
+                <table>
+                    <form>
+                        <tr>
+                            <th>
+                                <label for="eur">Eurolava:</label>
+                            </th>
+                            <td>
+                                <input type="number" name="eur" id="eur" min="0" onchange="calculateLvm()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="fin">Finlava:</label>
+                            </th>
+                            <td>
+                                <input type="number" name="fin" id="fin" min="0" onchange="calculateLvm()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="rll">Rullakko:</label>
+                            </th>
+                            <td>
+                                <input type="number" name="rll" id="rll" min="0" onchange="calculateLvm()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="teho">Myymälälava:</label>
+                            </th>
+                            <td>
+                                <input type="number" name="teho" id="teho" min="0" onchange="calculateLvm()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="dol">Dolly:</label>
+                            </th>
+                            <td>
+                                <input type="number" name="dol" id="dol" min="0" onchange="calculateLvm()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="mrlk">Maitorullakko:</label>
+                            </th>
+                            <td>
+                                <input type="number" name="mrlk" id="mrlk" min="0" onchange="calculateLvm()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="mdol">Maitodolly:</label>
+                            </th>
+                            <td>
+                                <input type="number" name="mdol" id="mdol" min="0" onchange="calculateLvm()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="vartti">Varttilava:</label>
+                            </th>
+                            <td>
+                                <input type="number" name="vartti" id="vartti" min="0" onchange="calculateLvm()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="pienipullo">240L pulloastia:</label>
+                            </th>
+                            <td>
+                                <input type="number" name="pienipullo" id="pienipullo" min="0"
+                                    onchange="calculateLvm()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="isopullo">600L pulloastia:</label>
+                            </th>
+                            <td>
+                                <input type="number" name="isopullo" id="isopullo" min="0" onchange="calculateLvm()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="ccrlk">Kukkarullakko:</label>
+                            </th>
+                            <td>
+                                <input type="number" name="ccrlk" id="ccrlk" min="0" onchange="calculateLvm()">
+                            </td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+            <div class="btn">
+                <button class="button" onclick="reset()">Resetoi</button>
+                <button class="button" onclick="calculateLvm()">Laske</button>
+            </div>
         </div>
     </div>
-
+    <button onclick="showSettings()">Asetukset</button>
+    <div id="asetukset" style="display: none;">
+        <p>Tällä sivulla voit muuttaa yhden kuljetusyksikön lavametrimäärää.</p>
+        <form>
+            <label for="eurMultiplier">1 Eurolava on</label>
+            <input type="number" name="eurMultiplier" id="eurMultiplier" min="0"
+                onchange="setMultiplierToLocalStorage('eurMultiplier')"> lvm
+            <label for="finMultiplier">1 Finlava on</label>
+            <input type="number" name="finMultiplier" id="finMultiplier" min="0"
+                onchange="setMultiplierToLocalStorage('finMultiplier')"> lvm
+            <label for="rllMultiplier">1 Rullakko on</label>
+            <input type="number" name="rllMultiplier" id="rllMultiplier" min="0"
+                onchange="setMultiplierToLocalStorage('rllMultiplier')"> lvm
+            <label for="dolMultiplier">1 Dolly on </label>
+            <input type="number" name="dolMultiplier" id="dolMultiplier" min="0"
+                onchange="setMultiplierToLocalStorage('dolMultiplier')"> lvm
+            <label for="tehoMultiplier">1 Teholava on </label>
+            <input type="number" name="tehoMultiplier" id="tehoMultiplier" min="0"
+                onchange="setMultiplierToLocalStorage('tehoMultiplier')"> lvm
+            <label for="varttiMultiplier">1 Varttilava on </label>
+            <input type="number" name="varttiMultiplier" id="varttiMultiplier" min="0"
+                onchange="setMultiplierToLocalStorage('varttiMultiplier')"> lvm
+            <label for="mdolMultiplier">1 Maitodolly on </label>
+            <input type="number" name="mdolMultiplier" id="mdolMultiplier" min="0"
+                onchange="setMultiplierToLocalStorage('mdolMultiplier')"> lvm
+            <label for="mrlkMultiplier">1 Maitorullakko on </label>
+            <input type="number" name="mrlkMultiplier" id="mrlkMultiplier" min="0"
+                onchange="setMultiplierToLocalStorage('mrlkMultiplier')"> lvm
+            <label for="pienipulloMultiplier">1 240L pulloastia on </label>
+            <input type="number" name="pienipulloMultiplier" id="pienipulloMultiplier" min="0"
+                onchange="setMultiplierToLocalStorage('pienipulloMultiplier')"> lvm
+            <label for="isopulloMultiplier">1 600L pulloastia on </label>
+            <input type="number" name="isopulloMultiplier" id="isopulloMultiplier" min="0"
+                onchange="setMultiplierToLocalStorage('isopulloMultiplier')"> lvm
+            <label for="ccrlkMultiplier">1 Kukkarullakko on </label>
+            <input type="number" name="ccrlkMultiplier" id="ccrlkMultiplier" min="0"
+                onchange="setMultiplierToLocalStorage('ccrlkMultiplier')"> lvm
+        </form>
+        <button onclick="setDefault()">Palauta oletusarvot</button> <button onclick="showSettings()">Tallenna</button>
+    </div>
 </body>
+
 </html>
