@@ -22,6 +22,7 @@ p {
 }
 #inputtable {
     padding: 15px 5px;
+    max-width: 500px;
 }
 table {
     width: 100%;
@@ -35,10 +36,18 @@ th {
 }
 input[type=number]{
     height: 27px;
+    width: 7em;
+}
+label:active {
+    color: seagreen;
+}
+label:hover {
+    color: seagreen;
 }
 h1 {
     font-family: 'Open Sans', sans-serif;
     color: seagreen;
+    margin-bottom: 8px;
 }
 .button {
     align-items: center;
@@ -67,4 +76,11 @@ h1 {
 }
 #asetukset{
     display: none;
+}
+#asetuksetbtn {
+    background-color: seagreen;
+    color: ghostwhite;
+}
+#result {
+    margin: 15px 0;
 }

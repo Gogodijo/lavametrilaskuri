@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="http://192.168.1.186:3000/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="http://192.168.1.186:3000/script.js"></script>
     <!-- http://192.168.1.186:3000/-->
 </head>
@@ -16,9 +16,10 @@
     <div class="flex-container">
         <div class="flex-container">
             <h1>Lavametrilaskuri</h1>
-            <p id="result">Lavametrit: 0.00 lvm</p>
+            <button class="button" id="asetuksetbtn" onclick="showSettings()">Asetukset</button>
         </div>
         <div id="laskuri">
+            <p id="result">Lavametrit: 0.00 lvm</p>
             <div id="inputtable" class="flex-container">
                 <table>
                     <form>
@@ -119,47 +120,122 @@
                 <button class="button" onclick="calculateLvm()">Laske</button>
             </div>
         </div>
+    
+    
     </div>
-    <button onclick="showSettings()">Asetukset</button>
+
     <div id="asetukset" style="display: none;">
-        <p>Tällä sivulla voit muuttaa yhden kuljetusyksikön lavametrimäärää.</p>
-        <form>
-            <label for="eurMultiplier">1 Eurolava on</label>
-            <input type="number" name="eurMultiplier" id="eurMultiplier" min="0"
-                onchange="setMultiplierToLocalStorage('eurMultiplier')"> lvm
-            <label for="finMultiplier">1 Finlava on</label>
-            <input type="number" name="finMultiplier" id="finMultiplier" min="0"
-                onchange="setMultiplierToLocalStorage('finMultiplier')"> lvm
-            <label for="rllMultiplier">1 Rullakko on</label>
-            <input type="number" name="rllMultiplier" id="rllMultiplier" min="0"
-                onchange="setMultiplierToLocalStorage('rllMultiplier')"> lvm
-            <label for="dolMultiplier">1 Dolly on </label>
-            <input type="number" name="dolMultiplier" id="dolMultiplier" min="0"
-                onchange="setMultiplierToLocalStorage('dolMultiplier')"> lvm
-            <label for="tehoMultiplier">1 Teholava on </label>
-            <input type="number" name="tehoMultiplier" id="tehoMultiplier" min="0"
-                onchange="setMultiplierToLocalStorage('tehoMultiplier')"> lvm
-            <label for="varttiMultiplier">1 Varttilava on </label>
-            <input type="number" name="varttiMultiplier" id="varttiMultiplier" min="0"
-                onchange="setMultiplierToLocalStorage('varttiMultiplier')"> lvm
-            <label for="mdolMultiplier">1 Maitodolly on </label>
-            <input type="number" name="mdolMultiplier" id="mdolMultiplier" min="0"
-                onchange="setMultiplierToLocalStorage('mdolMultiplier')"> lvm
-            <label for="mrlkMultiplier">1 Maitorullakko on </label>
-            <input type="number" name="mrlkMultiplier" id="mrlkMultiplier" min="0"
-                onchange="setMultiplierToLocalStorage('mrlkMultiplier')"> lvm
-            <label for="pienipulloMultiplier">1 240L pulloastia on </label>
-            <input type="number" name="pienipulloMultiplier" id="pienipulloMultiplier" min="0"
-                onchange="setMultiplierToLocalStorage('pienipulloMultiplier')"> lvm
-            <label for="isopulloMultiplier">1 600L pulloastia on </label>
-            <input type="number" name="isopulloMultiplier" id="isopulloMultiplier" min="0"
-                onchange="setMultiplierToLocalStorage('isopulloMultiplier')"> lvm
-            <label for="ccrlkMultiplier">1 Kukkarullakko on </label>
-            <input type="number" name="ccrlkMultiplier" id="ccrlkMultiplier" min="0"
-                onchange="setMultiplierToLocalStorage('ccrlkMultiplier')"> lvm
-        </form>
-        <button onclick="setDefault()">Palauta oletusarvot</button> <button onclick="showSettings()">Tallenna</button>
+        <div class="flex-container">
+            <div id="inputtable" class="flex-container">
+                <p>Tällä sivulla voit muuttaa kuljetusyksiköiden lavametrimääriä.</p>
+                <table>
+                    <form>
+                        <tr>
+                            <th>
+                                <label for="eurMultiplier">1 Eurolava on</label>
+                            </th>
+                            <td>
+                                <input type="number" name="eurMultiplier" id="eurMultiplier" min="0"
+                                onchange="setMultiplierToLocalStorage('eurMultiplier')"> lvm
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="finMultiplier">1 Finlava on</label>
+                            </th>
+                            <td>
+                                <input type="number" name="finMultiplier" id="finMultiplier" min="0"
+                            onchange="setMultiplierToLocalStorage('finMultiplier')"> lvm
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="rllMultiplier">1 Rullakko on</label>
+                            </th>
+                            <td>
+                                <input type="number" name="rllMultiplier" id="rllMultiplier" min="0"
+                            onchange="setMultiplierToLocalStorage('rllMultiplier')"> lvm
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="dolMultiplier">1 Dolly on </label>
+                            </th>
+                            <td>
+                                <input type="number" name="dolMultiplier" id="dolMultiplier" min="0"
+                            onchange="setMultiplierToLocalStorage('dolMultiplier')"> lvm
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="tehoMultiplier">1 Teholava on </label>
+                            </th>
+                            <td>
+                                <input type="number" name="tehoMultiplier" id="tehoMultiplier" min="0"
+                            onchange="setMultiplierToLocalStorage('tehoMultiplier')"> lvm
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="varttiMultiplier">1 Varttilava on </label>
+                            </th>
+                            <td>
+                                <input type="number" name="varttiMultiplier" id="varttiMultiplier" min="0"
+                            onchange="setMultiplierToLocalStorage('varttiMultiplier')"> lvm
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="mdolMultiplier">1 Maitodolly on </label>
+                            </th>
+                            <td>
+                                <input type="number" name="mdolMultiplier" id="mdolMultiplier" min="0"
+                            onchange="setMultiplierToLocalStorage('mdolMultiplier')"> lvm
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="mrlkMultiplier">1 Maitorullakko on </label>
+                            </th>
+                            <td>
+                                <input type="number" name="mrlkMultiplier" id="mrlkMultiplier" min="0"
+                            onchange="setMultiplierToLocalStorage('mrlkMultiplier')"> lvm
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="pienipulloMultiplier">1 240L pulloastia on </label>
+                            </th>
+                            <td>
+                                <input type="number" name="pienipulloMultiplier" id="pienipulloMultiplier" min="0"
+                            onchange="setMultiplierToLocalStorage('pienipulloMultiplier')"> lvm
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="isopulloMultiplier">1 600L pulloastia on </label>
+                            </th>
+                            <td>
+                                <input type="number" name="isopulloMultiplier" id="isopulloMultiplier" min="0"
+                            onchange="setMultiplierToLocalStorage('isopulloMultiplier')"> lvm
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="ccrlkMultiplier">1 Kukkarullakko on </label>
+                            </th>
+                            <td>
+                                <input type="number" name="ccrlkMultiplier" id="ccrlkMultiplier" min="0"
+                            onchange="setMultiplierToLocalStorage('ccrlkMultiplier')"> lvm
+                            </td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+        
+    <button class="button" onclick="setDefault()">Palauta oletusarvot</button> <button class="button" onclick="showSettings()">Tallenna</button>
     </div>
+</div>
 </body>
 
 </html>
